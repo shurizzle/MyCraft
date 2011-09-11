@@ -25,7 +25,7 @@ AuthServer.controllers do
       account.update(session_hash: uuid)
       "2:unused:#{account.nick}:#{uuid}:"
     else
-      'STICAZZI?'
+      'Bad login'
     end
   end
 
