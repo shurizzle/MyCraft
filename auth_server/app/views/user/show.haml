@@ -1,0 +1,40 @@
+.block
+  %p
+    email:
+    =@account.email
+  %br
+  -if is_the_same
+    -form_for @account, url(:user, :update) do |f|
+      =hidden_field_tag :id, value: @account.id
+      .group
+        =f.label :email
+        =f.error_message_on :email
+        =f.text_field :email
+
+      .group
+        =f.label :email_confirmation
+        =f.error_message_on :email_confirmation
+        =f.text_field :email_confirmation
+      =f.submit 'Change email'
+
+    -form_for @account, url(:user, :update) do |f|
+      =hidden_field_tag :id, value: @account.id
+      .group
+        =f.label :password
+        =f.error_message_on :password
+        =f.password_field :password
+
+      .group
+        =f.label :password_confirmation
+        =f.error_message_on :password_confirmation
+        =f.password_field :password_confirmation
+      =f.submit 'Change password'
+
+  =skin_for @account
+  -if is_the_same
+    =form_tag '/user/upload', multipart: true do
+      =label_tag :skin
+      =error_message_on :skin, :skin
+      =file_field_tag :skin
+
+      =submit_tag 'Upload'

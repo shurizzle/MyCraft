@@ -1,0 +1,3 @@
+.block
+  -form_for :account, url(:user, :create) do |f|
+    =partial 'user/form', locals: { f: f }

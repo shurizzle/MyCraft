@@ -1,0 +1,6 @@
+.block
+  =form_tag url(:session, :create) do
+    =text_field_tag :nick
+    =password_field_tag :password
+
+    =submit_tag 'Login'

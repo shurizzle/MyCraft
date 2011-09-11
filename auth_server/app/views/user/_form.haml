@@ -1,0 +1,27 @@
+.group
+  =f.label :nick
+  =f.error_message_on :nick
+  =f.text_field :nick
+
+.group
+  =f.label :email
+  =f.error_message_on :email
+  =f.text_field :email
+
+.group
+  =f.label :email_confirmation
+  =f.error_message_on :email_confirmation
+  =f.text_field :email_confirmation
+
+.group
+  =f.label :password
+  =f.error_message_on :password
+  =f.password_field :password
+
+.group
+  =f.label :password_confirmation
+  =f.error_message_on :password_confirmation
+  =f.password_field :password_confirmation
+
+.group
+  =f.submit 'Save'
