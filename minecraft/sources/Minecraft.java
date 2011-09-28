@@ -1,6 +1,6 @@
 // Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) braces deadcode 
+// Decompiler options: packimports(3) braces deadcode
 
 package net.minecraft.client;
 
@@ -248,11 +248,16 @@ public abstract class Minecraft
         tessellator.draw();
     }
 
+    public static String getAppName()
+    {
+      return System.getProperty("minecraft.appname", "minecraft");
+    }
+
     public static File getMinecraftDir()
     {
         if(minecraftDir == null)
         {
-            minecraftDir = getAppDir("minecraft");
+            minecraftDir = getAppDir(getAppName());
         }
         return minecraftDir;
     }
@@ -552,7 +557,7 @@ public abstract class Minecraft
                     checkGLError("Post render");
                     i++;
                     isGamePaused = !isMultiplayerWorld() && currentScreen != null && currentScreen.doesGuiPauseGame();
-                    while(System.currentTimeMillis() >= l + 1000L) 
+                    while(System.currentTimeMillis() >= l + 1000L)
                     {
                         debug = (new StringBuilder()).append(i).append(" fps, ").append(WorldRenderer.chunksUpdated).append(" chunk updates").toString();
                         WorldRenderer.chunksUpdated = 0;
@@ -1093,7 +1098,7 @@ public abstract class Minecraft
                             }
                         }
                         int i = 0;
-                        while(i < 9) 
+                        while(i < 9)
                         {
                             if(Keyboard.getEventKey() == 2 + i)
                             {
