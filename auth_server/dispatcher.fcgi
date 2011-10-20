@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 # require rack fastcgi {{{
 require 'rack/handler/fastcgi'
